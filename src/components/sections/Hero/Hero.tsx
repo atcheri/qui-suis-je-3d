@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { RESUME_URL, words } from "./constants";
-import Button from "../Button";
+import Button from "../../Button";
 
 const Hero: FC = () => {
   return (
