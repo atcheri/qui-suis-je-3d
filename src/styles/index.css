@@ -216,7 +216,7 @@ section {
     }
 
     .text {
-      @apply uppercase md:text-lg text-black transition-all duration-500
+      @apply uppercase text-xs md:text-lg text-black transition-all duration-500
         group-hover:text-white-50 group-hover:-translate-x-5 xl:translate-x-0 -translate-x-5;
     }
 
@@ -379,19 +379,11 @@ section {
 .gradient-edge:nth-of-type(1) {
   left: 0;
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 .gradient-edge:nth-of-type(2) {
   right: 0;
-  background: linear-gradient(
-    -90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(-90deg, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 /* marquee */
@@ -442,13 +434,9 @@ section {
   border: 2px solid transparent;
   background: var(--gradient);
   background-attachment: fixed;
-  mask: linear-gradient(#0000, #0000),
-    conic-gradient(
-      from calc((var(--start) - 15) * 1deg),
-      #ffffff1f 0deg,
-      white,
-      #ffffff00 100deg
-    );
+  mask:
+    linear-gradient(#0000, #0000),
+    conic-gradient(from calc((var(--start) - 15) * 1deg), #ffffff1f 0deg, white, #ffffff00 100deg);
   mask-composite: intersect;
   mask-clip: padding-box, border-box;
   opacity: 0;

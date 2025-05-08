@@ -19,7 +19,7 @@ const Hero: FC = () => {
   });
 
   return (
-    <section id="hero" className="relative overflow-hidden">
+    <section id="hero">
       <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="hero-background" />
       </div>
@@ -58,7 +58,7 @@ const Hero: FC = () => {
                 </a>
                 , or
               </p>
-              <Button text="Discover my work" className="md:w-80 md:h-16 w-60 h-12" id="discover-work" />
+              <Button text="Discover my work" className="md:w-80 md:h-16 w-60 h-12" id="work" />
             </div>
           </header>
           <Fade delay={3 * delayUnit}>
