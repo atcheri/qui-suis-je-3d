@@ -1,5 +1,5 @@
-import { Canvas } from "@react-three/fiber";
-import type { FC } from "react";
+import { Canvas } from '@react-three/fiber';
+import type { FC } from 'react';
 
 const HeroCanvas: FC = () => {
   return (
