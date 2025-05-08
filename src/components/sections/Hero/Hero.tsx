@@ -1,8 +1,18 @@
-import type { FC } from "react";
-import { RESUME_URL, words } from "./constants";
-import Button from "../../Button";
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import type { FC } from 'react';
+import Button from '../../Button';
+import { RESUME_URL, words } from './constants';
 
 const Hero: FC = () => {
+  useGSAP(() => {
+    gsap.fromTo(
+      '.hero-text h1',
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, stagger: 0.2, duration: 2, ease: 'power2.inOut' },
+    );
+  });
+
   return (
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute top-0 left-0 z-10">
@@ -18,10 +28,7 @@ const Hero: FC = () => {
                 <span className="slide">
                   <span className="wrapper">
                     {words.map((word, index) => (
-                      <span
-                        key={index}
-                        className="flex items-center md:gap-3 gap-1 pb-2"
-                      >
+                      <span key={index} className="flex items-center md:gap-3 gap-1 pb-2">
                         <img
                           src={word.imgPath}
                           alt="person"
@@ -39,21 +46,13 @@ const Hero: FC = () => {
 
             <p className="text-white-50 md:text-xl relative z-10 ">
               Hi, I'm Atsuhiro. <br />
-              You can find my{" "}
-              <a
-                href={RESUME_URL}
-                className="underline font-bold"
-                target="_blank"
-              >
+              You can find my{' '}
+              <a href={RESUME_URL} className="underline font-bold" target="_blank">
                 Resume here
               </a>
               , or
             </p>
-            <Button
-              text="Discover my work"
-              className="md:w-80 md:h-16 w-60 h-12"
-              id="discover-work"
-            />
+            <Button text="Discover my work" className="md:w-80 md:h-16 w-60 h-12" id="discover-work" />
           </div>
         </header>
       </div>
