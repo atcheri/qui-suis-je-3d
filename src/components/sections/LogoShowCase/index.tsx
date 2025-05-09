@@ -18,7 +18,7 @@ const LogoShowCase = () => {
 
       <div className="marquee h-52">
         <div className="marquee-box md:gap-12 gap-5">
-          {companiesLogos.map((cmp, index) => (
+          {[...companiesLogos, ...companiesLogos, ...companiesLogos].map((cmp, index) => (
             <LogoIcon key={index} companyLogo={cmp} />
           ))}
 
