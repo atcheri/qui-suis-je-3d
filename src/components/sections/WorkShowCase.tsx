@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ShowCase = () => {
+const WorkShowCase = () => {
   const sectionRef = useRef(null);
   const devExRef = useRef(null);
   const sdkRef = useRef(null);
@@ -74,4 +74,4 @@ const ShowCase = () => {
   );
 };
 
-export default ShowCase;
+export default WorkShowCase;
