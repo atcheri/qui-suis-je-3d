@@ -265,7 +265,7 @@ export const workExperiences: WorkExperience[] = [
     what: "Company allocating licensed Guides-Assistants to tourists groups from different countries of the world (mostly Japan) during their visit in France, in Paris and it's neighboring areas.",
   },
   {
-    title: "Software Engineeraffinidi",
+    title: "Software Engineer",
     type: "work",
     place: "CFM SA",
     logoPath: "/images/companies/cfm-vector.svg",
