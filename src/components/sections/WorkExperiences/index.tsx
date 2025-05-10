@@ -3,8 +3,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import { workExperiences } from "./constants";
+import AnchoredHeader from "../../AnchorHeader";
+import { SECTION } from "../../constants";
 import GlowCard from "../../GlowCard";
-import TitleHeader from "../../TitleHeader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -54,10 +55,16 @@ const WorkExperience = () => {
   }, []);
 
   return (
-    <section id="experience" className="flex-center md:mt-40 mt-20 section-padding xl:px-0">
+    <section id="experience" className="flex-center section-padding xl:px-0">
       <div className="w-full h-full md:px-20 px-5">
-        <TitleHeader title="Professional Work Experience" sub="💼 My Career Overview" />
-        <div className="mt-32 relative">
+        <div className="flex flex-col items-center">
+          <AnchoredHeader
+            anchor={SECTION.PAST_EXPERIENCE}
+            title="Professional Work Experience"
+            subTitle="Career Overview"
+          />
+        </div>
+        <div className="mt-8 relative">
           <div className="relative z-50 xl:space-y-32 space-y-10">
             {workExperiences.map((exp, index) => (
               <div key={`${exp.title}-${index}`} className="exp-card-wrapper">

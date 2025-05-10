@@ -3,6 +3,9 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
+import AnchoredHeader from "../AnchorHeader";
+import { SECTION } from "../constants";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const WorkShowCase = () => {
@@ -39,7 +42,14 @@ const WorkShowCase = () => {
   return (
     <div id="work" ref={sectionRef} className="app-showcase">
       <div className="w-full">
-        <div className="showcaselayout">
+        <div className="flex flex-col items-center">
+          <AnchoredHeader
+            anchor={SECTION.RECENT_PROJECTS}
+            title="Recent Projects"
+            subTitle="What I have been working on"
+          />
+        </div>
+        <div className="showcaselayout mt-8">
           <div ref={devExRef} className="first-project-wrapper">
             <div className="image-wrapper">
               <img src="/images/affinidi-devex-portal.png" alt="Dev-Ex portal" />

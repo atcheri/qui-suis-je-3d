@@ -3,7 +3,8 @@ import gsap from "gsap";
 
 import { techStackIcons } from "./constants";
 import TechIconCard from "./TechIconCard";
-import TitleHeader from "../../TitleHeader";
+import AnchoredHeader from "../../AnchorHeader";
+import { SECTION } from "../../constants";
 
 const TeckStack = () => {
   useGSAP(() => {
@@ -30,7 +31,13 @@ const TeckStack = () => {
   return (
     <div id="skills" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
-        <TitleHeader title="How I Can Contribute & My Key Skills" sub="🤝 What I Bring to the Table" />
+        <div className="flex flex-col items-center">
+          <AnchoredHeader
+            anchor={SECTION.TECH_SKILLS}
+            title="Key tech skills"
+            subTitle="An overview of what I can do"
+          />
+        </div>
         <div className="tech-grid">
           {techStackIcons.map((techStackIcon) => (
             <div key={techStackIcon.name} className="card-border tech-card overflow-hidden group  rounded-lg">

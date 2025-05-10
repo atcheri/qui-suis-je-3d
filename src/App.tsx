@@ -1,4 +1,5 @@
 import Features from "./components/sections/Features";
+import Footer from "./components/sections/Footer";
 import Hero from "./components/sections/Hero";
 import LogoShowCase from "./components/sections/LogoShowCase";
 import NavBar from "./components/sections/NavBar";
@@ -18,6 +19,7 @@ function App() {
       <WorkExperience />
       <TeckStack />
       <Testimonials />
+      <Footer />
     </>
   );
 }
