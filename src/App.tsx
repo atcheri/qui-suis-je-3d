@@ -2,6 +2,7 @@ import Features from "./components/sections/Features";
 import Hero from "./components/sections/Hero";
 import LogoShowCase from "./components/sections/LogoShowCase";
 import NavBar from "./components/sections/NavBar";
+import WorkExperience from "./components/sections/WorkExperiences";
 import WorkShowCase from "./components/sections/WorkShowCase";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <WorkShowCase />
       <LogoShowCase />
       <Features />
+      <WorkExperience />
     </>
   );
 }
