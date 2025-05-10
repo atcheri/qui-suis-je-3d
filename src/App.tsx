@@ -1,3 +1,4 @@
+import Contact from "./components/sections/Contact";
 import Features from "./components/sections/Features";
 import Footer from "./components/sections/Footer";
 import Hero from "./components/sections/Hero";
@@ -19,6 +20,7 @@ function App() {
       <WorkExperience />
       <TeckStack />
       <Testimonials />
+      <Contact />
       <Footer />
     </>
   );
