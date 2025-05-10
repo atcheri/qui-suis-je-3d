@@ -62,7 +62,7 @@ const WorkExperience = () => {
             {workExperiences.map((exp, index) => (
               <div key={`${exp.title}-${index}`} className="exp-card-wrapper">
                 <div className="xl:w-2/6">
-                  <GlowCard experience={exp} index={index} />
+                  <GlowCard card={exp} index={index} />
                 </div>
                 <div className="xl:w-4/6">
                   <div className="flex items-start">

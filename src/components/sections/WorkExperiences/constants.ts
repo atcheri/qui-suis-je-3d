@@ -47,7 +47,7 @@ export const expCards = [
   },
 ];
 
-export type WorkExperience = {
+type WorkExperience = {
   title: string;
   type: ExperienceType;
   place: string;

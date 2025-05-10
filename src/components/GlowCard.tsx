@@ -1,13 +1,11 @@
 import { useRef, type FC, type PropsWithChildren } from "react";
 
-import type { WorkExperience } from "./sections/WorkExperiences/constants";
-
 interface GlowCardProps {
-  experience: WorkExperience;
+  card: { content: string; what: string };
   index: number;
 }
 
-const GlowCard: FC<PropsWithChildren<GlowCardProps>> = ({ experience, index, children }) => {
+const GlowCard: FC<PropsWithChildren<GlowCardProps>> = ({ card, index, children }) => {
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const handleMouseMove = (index: number) => (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -33,10 +31,10 @@ const GlowCard: FC<PropsWithChildren<GlowCardProps>> = ({ experience, index, chi
     >
       <div className="glow"></div>
       <div className="flex items-center gap-1 mb-5">
-        <p className="text-white-50 text-lg">{experience.content}</p>
+        <p className="text-white-50 text-lg">{card.content}</p>
       </div>
       <div className="mb-5">
-        <p className="text-white-50 text-lg">{experience.what}</p>
+        <p className="text-white-50 text-lg">{card.what}</p>
       </div>
       {children}
     </div>
