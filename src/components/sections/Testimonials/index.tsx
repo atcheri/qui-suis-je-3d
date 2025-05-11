@@ -26,13 +26,13 @@ const Testimonials = () => {
         />
       </div>
       <div className="flex-center flex-col gap-5">
-        <div className="w-full h-full md:px-10 px-5">
-          <div className="lg:columns-3 md:columns-2 columns-1 mt-8">
+        <div className="h-full w-full px-5 md:px-10">
+          <div className="mt-8 columns-1 md:columns-2 lg:columns-3">
             {items.map(({ name, title, role, content, github, linkedin }, index) => (
-              <GlowCard card={{ content: title, what: content.join(" ") }} key={index} index={index}>
+              <GlowCard card={{ content: "", what: "" }} key={index} index={index}>
                 <div className="text-center">
                   <RiDoubleQuotesL className={`float-left ${quoteClass}`} />
-                  <h3 className="font-semibold mb-2">{title}</h3>
+                  <h3 className="mb-2 font-semibold">{title}</h3>
                   <span
                     className="leading-relaxed italic"
                     dangerouslySetInnerHTML={{
@@ -41,9 +41,12 @@ const Testimonials = () => {
                   />
                   <RiDoubleQuotesR className={`float-right ${quoteClass}`} />
                 </div>
-                <span className="inline-block h-1 w-10 rounded bg-indigo-500" />
-                <div className="w-full flex flex-col items-end">
-                  <h3 className="font-medium text-xl title-font font-rochester italic tracking-wider">{name}</h3>
+
+                <div className="my-4 flex justify-center">
+                  <span className="h-1 w-10 rounded bg-indigo-500" />
+                </div>
+                <div className="flex w-full flex-col items-end">
+                  <h3 className="title-font font-rochester text-xl font-medium tracking-wider italic">{name}</h3>
                   <p className="flex gap-2">
                     {linkedin && (
                       <a href={linkedin} target="_blank">
@@ -63,11 +66,11 @@ const Testimonials = () => {
           </div>
         </div>
         <div className="relative cursor-pointer" onClick={toggleMore}>
-          <span className="absolute inline-block rounded-full bg-indigo-500 text-white text-lg p-2">
+          <span className="absolute inline-block rounded-full bg-indigo-500 p-2 text-lg text-white">
             {isMax ? <MdOutlineUnfoldLess /> : <TbDotsVertical />}
           </span>
           {!isMax && (
-            <span className="absolute inline-block rounded-full bg-indigo-500 text-white text-lg p-4 ml-[1px] top-[1px] animate-[ping_2s_ease_infinite]"></span>
+            <span className="absolute top-[1px] ml-[1px] inline-block animate-[ping_2s_ease_infinite] rounded-full bg-indigo-500 p-4 text-lg text-white"></span>
           )}
         </div>
       </div>
