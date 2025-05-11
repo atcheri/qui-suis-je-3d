@@ -11,16 +11,16 @@ export const navLinks = [
     name: "Skills",
     link: "#skills",
   },
-  {
-    name: "Certifications",
-    link: "#certifications",
-  },
+  // {
+  //   name: "Certifications",
+  //   link: "#certifications",
+  // },
   {
     name: "Testimonials",
     link: "#testimonials",
   },
-  {
-    name: "Side-gigs",
-    link: "#side-gigs",
-  },
+  // {
+  //   name: "Side-gigs",
+  //   link: "#side-gigs",
+  // },
 ];

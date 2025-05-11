@@ -1,7 +1,7 @@
 import { useState, useEffect, type FC } from "react";
 
 import { navLinks } from "./constants";
-import { ItsutsuInazumaIcon } from "../../icons";
+import Logo from "../../Logo";
 
 const NavBar: FC = () => {
   // track if the user has scrolled down the page
@@ -21,13 +21,7 @@ const NavBar: FC = () => {
   return (
     <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
       <div className="inner">
-        <a href="#hero" className="logo">
-          <ItsutsuInazumaIcon className="h-8 w-8 flex-shrink-0 mr-3 fill-indigo-900 dark:fill-slate-200" />
-          <span className="font-alice text-3xl text-indigo-900 dark:text-slate-200 tracking-tight whitespace-nowrap">
-            5Inazuma
-          </span>
-        </a>
-
+        <Logo />
         <nav className="desktop">
           <ul>
             {navLinks.map(({ link, name }) => (

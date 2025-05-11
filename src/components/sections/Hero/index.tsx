@@ -25,8 +25,8 @@ const Hero: FC = () => {
       </div>
 
       <div className="hero-layout">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-6">
-          <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+        <div className="grid gap-10 md:grid-cols-2 md:gap-6">
+          <header className="flex w-screen flex-col justify-center px-5 md:w-full md:px-20">
             <div className="flex flex-col gap-7">
               <div className="hero-text">
                 <h1>
@@ -34,11 +34,11 @@ const Hero: FC = () => {
                   <span className="slide">
                     <span className="wrapper">
                       {words.map((word, index) => (
-                        <span key={index} className="flex items-center md:gap-3 gap-1 pb-2">
+                        <span key={index} className="flex items-center gap-1 pb-2 md:gap-3">
                           <img
                             src={word.imgPath}
                             alt="person"
-                            className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
+                            className="bg-white-50 size-7 rounded-full p-1 md:size-10 md:p-2 xl:size-12"
                           />
                           <span>{word.text}</span>
                         </span>
@@ -50,18 +50,18 @@ const Hero: FC = () => {
                 <h1>With next gen decentralized tools</h1>
               </div>
 
-              <p className="text-white-50 md:text-xl relative z-10 ">
+              <p className="text-white-50 relative z-10 md:text-xl">
                 Hi, I'm Atsuhiro. <br />
                 You can find my{" "}
-                <a href={RESUME_URL} className="underline font-bold" target="_blank">
+                <a href={RESUME_URL} className="font-bold underline" target="_blank">
                   Resume here
                 </a>
                 , or
               </p>
-              <Button text="Discover my work" className="md:w-80 md:h-16 w-60 h-12" id="work" />
+              <Button text="Discover my work" className="h-12 w-60 md:h-16 md:w-80" id="work" />
             </div>
           </header>
-          <Fade delay={3 * delayUnit}>
+          <Fade delay={3 * delayUnit} className="max-md:hidden">
             <CodeSnippets />
           </Fade>
         </div>
