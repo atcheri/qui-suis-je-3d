@@ -14,7 +14,7 @@ export const SECTION = Object.freeze({
 });
 
 export const CONTACT_LINKS = {
-  LINKEDIN: "https://www.linkedin.com/in/endoatsuhiro",
+  LINKEDIN: "https://www.linkedin.com/in/atsuhiro-endo-software-engineer/",
   GITHUB: "https://github.com/atcheri",
   LINE: "https://line.me/ti/p/Fs4L863JIC",
   TELEGRAM: "https://t.me/atchdayo",
