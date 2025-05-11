@@ -1,7 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useRef, useState, type ChangeEvent, type FormEvent } from "react";
 
-import ConnectWithMe from "./ConnectWithMe";
 import ContactExperience from "./ContactExperience";
 import AnchoredHeader from "../../AnchorHeader";
 import { SECTION } from "../../constants";
@@ -42,7 +41,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="flex-center section-padding">
-      <div className="w-full h-full md:px-10 px-5">
+      <div className="h-full w-full px-5 md:px-10">
         <div className="flex flex-col items-center">
           <AnchoredHeader
             anchor={SECTION.CONTACT_ME}
@@ -53,7 +52,7 @@ const Contact = () => {
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
             <div className="flex-center card-border rounded-xl p-10">
-              <form ref={formRef} onSubmit={handleSubmit} className="w-full flex flex-col gap-7">
+              <form ref={formRef} onSubmit={handleSubmit} className="flex w-full flex-col gap-7">
                 <div>
                   <label htmlFor="name">Your name</label>
                   <input
@@ -105,8 +104,8 @@ const Contact = () => {
               </form>
             </div>
           </div>
-          <div className="xl:col-span-7 min-h-96">
-            <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
+          <div className="min-h-96 xl:col-span-7">
+            <div className="h-full w-full overflow-hidden rounded-3xl bg-[#cd7c2e] hover:cursor-grab">
               <ContactExperience />
             </div>
           </div>
