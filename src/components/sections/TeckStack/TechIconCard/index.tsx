@@ -1,6 +1,8 @@
+"use client";
+
 import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { type FC } from "react";
+import { Suspense, useState, useEffect, type FC } from "react";
 
 import type { TechStackIcon } from "../constants";
 
@@ -8,8 +10,42 @@ type TechIconCardProps = {
   model: TechStackIcon;
 };
 
+const Model: FC<{ modelPath: string; scale: number; rotation: [number, number, number] }> = ({
+  modelPath,
+  scale,
+  rotation,
+}) => {
+  const scene = useGLTF(modelPath);
+
+  return (
+    <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
+      <group scale={scale} rotation={rotation}>
+        <primitive object={scene.scene} />
+      </group>
+    </Float>
+  );
+};
+
+const ModelLoading = () => {
+  return (
+    <mesh>
+      <boxGeometry args={[1, 1, 1]} />
+      <meshStandardMaterial color="gray" />
+    </mesh>
+  );
+};
+
 const TechIconCard: FC<TechIconCardProps> = ({ model }) => {
-  const scene = useGLTF(model.modelPath);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    useGLTF.preload(model.modelPath);
+    setIsMounted(true);
+  }, [model.modelPath]);
+
+  if (!isMounted) {
+    return <div className="h-40 w-full animate-pulse rounded-md bg-gray-100"></div>;
+  }
 
   return (
     <Canvas>
@@ -18,11 +54,9 @@ const TechIconCard: FC<TechIconCardProps> = ({ model }) => {
       <spotLight position={[10, 15, 10]} angle={0.3} penumbra={1} intensity={2} />
       <Environment preset="city" />
 
-      <Float speed={5.5} rotationIntensity={0.5} floatIntensity={0.9}>
-        <group scale={model.scale} rotation={model.rotation}>
-          <primitive object={scene.scene} />
-        </group>
-      </Float>
+      <Suspense fallback={<ModelLoading />}>
+        <Model modelPath={model.modelPath} scale={model.scale} rotation={model.rotation} />
+      </Suspense>
 
       <OrbitControls enableZoom={false} />
     </Canvas>

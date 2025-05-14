@@ -17,7 +17,7 @@ const Footer: FC = () => {
             <Logo />
           </div>
           <div className="socials">
-            <a href="mailto:atcheri@gmail.com" className="icon">
+            <a href={`mailto:${CONTACT_LINKS.EMAIL}`} className="icon">
               <RiMailSendLine className="h-8 w-8" />
             </a>
             <a href={CONTACT_LINKS.LINKEDIN} className="icon" target="_blank">
