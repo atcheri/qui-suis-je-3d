@@ -11,10 +11,10 @@ export const navLinks = [
     name: "Skills",
     link: "#skills",
   },
-  // {
-  //   name: "Certifications",
-  //   link: "#certifications",
-  // },
+  {
+    name: "Certifications",
+    link: "#certifications",
+  },
   {
     name: "Testimonials",
     link: "#testimonials",
